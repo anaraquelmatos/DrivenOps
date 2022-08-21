@@ -6,7 +6,7 @@ services:
     ports: 
       - 4457:5432
     env_file:
-      - back-end/.env
+      - back-end/.env.dev
     volumes:
       - pg:/var/lib/postgresql/data
 
@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
     env_file:
-      - back-end/.env
+      - back-end/.env.dev
 
   react_app:
     container_name: react_app
