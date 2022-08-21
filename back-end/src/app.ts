@@ -1,6 +1,8 @@
 import express, { json, Request, Response } from "express";
 import cors from "cors";
 import prisma from "./database.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
