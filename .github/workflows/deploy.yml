@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Create back-end env file
+      - name: Create back-end env.prod file
         uses: SpicyPizza/create-envfile@v1.3
           envkey_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
           envkey_POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
@@ -25,7 +25,7 @@ jobs:
         with:
           envkey_REACT_APP_BASE_URL: ${{secrets.REACT_APP_BASE_URL}}
           directory: front-end/
-          file_name: .env.prod
+          file_name: .env
           fail_on_empty: true
 
       - name: Build
